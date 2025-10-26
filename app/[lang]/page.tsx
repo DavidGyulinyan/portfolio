@@ -1,7 +1,8 @@
-"use client";
-
 import Link from "next/link";
-import { useLanguage } from "./context/LanguageContext";
+
+interface PageProps {
+  params: Promise<{ lang: string }>;
+}
 
 const content = {
   en: {
@@ -34,9 +35,10 @@ const content = {
   },
 };
 
-export default function Home() {
-  const { language } = useLanguage();
-  const t = content[language];
+export default async function Home({ params }: PageProps) {
+  const { lang } = await params;
+  const locale = lang as 'en' | 'hy';
+  const t = content[locale];
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
@@ -50,13 +52,13 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
-              href="/projects"
+              href={`/${locale}/projects`}
               className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
             >
               {t.viewProjects}
             </Link>
             <Link
-              href="/contact"
+              href={`/${locale}/contact`}
               className="border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-medium transition-colors"
             >
               {t.contactMe}
@@ -67,7 +69,9 @@ export default function Home() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
           {t.skills.map((skill, index) => (
             <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{skill.title}</h3>
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                {skill.title}
+              </h3>
               <p className="text-gray-600 dark:text-gray-300">{skill.desc}</p>
             </div>
           ))}
