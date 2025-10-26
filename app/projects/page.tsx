@@ -8,7 +8,7 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  type: "Landing" | "Web App" | "Admin Panel";
+  type: "Landing" | "Web App" | "Admin Panel" | "Mobile App";
   technologies: string[];
   image: string;
   demoUrl?: string;
@@ -23,6 +23,7 @@ const content = {
     landing: "Landing",
     webApp: "Web App",
     adminPanel: "Admin Panel",
+    mobileApp: "Mobile App",
     demo: "Demo",
     github: "GitHub",
     details: "Details",
@@ -32,7 +33,7 @@ const content = {
         title: "E-commerce Platform",
         description: "A full-featured online store with shopping cart, payment integration, and admin dashboard.",
         type: "Web App",
-        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
+        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL", "React Native"],
         image: "/projects/ecommerce.jpg",
         demoUrl: "https://demo.example.com",
         githubUrl: "https://github.com/username/ecommerce",
@@ -52,10 +53,20 @@ const content = {
         title: "Admin Dashboard",
         description: "Comprehensive admin panel for managing users, content, and analytics.",
         type: "Admin Panel",
-        technologies: ["React", "TypeScript", "Chart.js", "Material-UI"],
+        technologies: ["React", "TypeScript", "Chart.js", "Material-UI", "React Native"],
         image: "/projects/dashboard.jpg",
         demoUrl: "https://admin.example.com",
         githubUrl: "https://github.com/username/dashboard",
+      },
+      {
+        id: "fitness-tracker",
+        title: "Fitness Tracker Mobile App",
+        description: "Cross-platform mobile app for tracking workouts, nutrition, and fitness goals.",
+        type: "Mobile App",
+        technologies: ["React Native", "TypeScript", "Firebase", "AsyncStorage"],
+        image: "/projects/fitness.jpg",
+        demoUrl: "https://demo.fitnessapp.com",
+        githubUrl: "https://github.com/username/fitness-tracker",
       },
     ],
   },
@@ -63,9 +74,10 @@ const content = {
     title: "Նախագծեր",
     subtitle: "Իմ վերջին աշխատանքների և անձնական նախագծերի ցուցադրում",
     all: "Բոլորը",
-    landing: "Կայլ",
+    landing: "Կայք",
     webApp: "Վեբ հավելված",
     adminPanel: "Ադմին վահանակ",
+    mobileApp: "Մոբայլ հավելված",
     demo: "Դեմո",
     github: "GitHub",
     details: "Մանրամասներ",
@@ -75,7 +87,7 @@ const content = {
         title: "Էլեկտրոնային առևտրի հարթակ",
         description: "Լրիվ հագեցած առցանց խանութ զամբյուղով, վճարման ինտեգրացիայով և ադմին վահանակով։",
         type: "Web App",
-        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL"],
+        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL", "React Native"],
         image: "/projects/ecommerce.jpg",
         demoUrl: "https://demo.example.com",
         githubUrl: "https://github.com/username/ecommerce",
@@ -95,10 +107,20 @@ const content = {
         title: "Ադմին վահանակ",
         description: "Համապարփակ ադմին վահանակ օգտատերերի, բովանդակության և վիճակագրության կառավարման համար։",
         type: "Admin Panel",
-        technologies: ["React", "TypeScript", "Chart.js", "Material-UI"],
+        technologies: ["React", "TypeScript", "Chart.js", "Material-UI", "React Native"],
         image: "/projects/dashboard.jpg",
         demoUrl: "https://admin.example.com",
         githubUrl: "https://github.com/username/dashboard",
+      },
+      {
+        id: "fitness-tracker",
+        title: "Ֆիթնես հետևում մոբայլ հավելված",
+        description: "Խաչաձև հարթակների մոբայլ հավելված մարզումների, սննդի և ֆիթնես նպատակների հետևման համար։",
+        type: "Mobile App",
+        technologies: ["React Native", "TypeScript", "Firebase", "AsyncStorage"],
+        image: "/projects/fitness.jpg",
+        demoUrl: "https://demo.fitnessapp.com",
+        githubUrl: "https://github.com/username/fitness-tracker",
       },
     ],
   },
@@ -119,6 +141,7 @@ export default function Projects() {
     { key: "Landing", label: t.landing },
     { key: "Web App", label: t.webApp },
     { key: "Admin Panel", label: t.adminPanel },
+    { key: "Mobile App", label: t.mobileApp },
   ];
 
   return (
@@ -159,7 +182,7 @@ export default function Projects() {
             >
               <div className="aspect-video bg-gray-200 dark:bg-gray-700 relative">
                 {/* Placeholder for project image */}
-                <div className="absolute inset-0 flex items-center justify-center text-gray-400 dark:text-gray-500">
+                <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
                   <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
                     <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
                   </svg>

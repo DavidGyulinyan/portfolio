@@ -13,6 +13,8 @@ const content = {
       { title: "React/Next.js", desc: "Building modern web applications with the latest technologies" },
       { title: "TypeScript", desc: "Type-safe development for robust and maintainable code" },
       { title: "Tailwind CSS", desc: "Creating beautiful, responsive designs efficiently" },
+      { title: "React Native", desc: "Cross-platform mobile app development" },
+      { title: "Node.js", desc: "Server-side JavaScript for scalable applications" },
       { title: "Performance", desc: "Optimized applications with fast loading times" },
       { title: "Accessibility", desc: "Inclusive design for all users" },
       { title: "SEO", desc: "Search engine optimized for better visibility" },
@@ -26,7 +28,9 @@ const content = {
     skills: [
       { title: "React/Next.js", desc: "Ստեղծելով ժամանակակից վեբ հավելվածներ վերջին տեխնոլոգիաներով" },
       { title: "TypeScript", desc: "Տիպավորված ծրագրավորում հուսալի և սպասարկելի կոդի համար" },
-      { title: "Tailwind CSS", desc: "Ստեղծելով գեղեցիկ և արձագանքող դիզայներ արդյունավետորեն" },
+      { title: "Tailwind CSS", desc: "Ստեղծելով  արդյունավետ, գեղեցիկ և արձագանքող դիզայն" },
+      { title: "React Native", desc: "Բոլոր հարթակների համար մոբայլ հավելվածների մշակում" },
+      { title: "Node.js", desc: "Սերվերային կողմի JavaScript մասշտաբային հավելվածների համար" },
       { title: "Արտադրողականություն", desc: "Օպտիմիզացված հավելվածներ արագ բեռնման ժամանակով" },
       { title: "Հասանելիություն", desc: "Ներառական դիզայն բոլոր օգտատերերի համար" },
       { title: "SEO", desc: "Որոնման համակարգերի օպտիմիզացիա ավելի լավ տեսանելիության համար" },
@@ -64,11 +68,11 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mt-16">
           {t.skills.map((skill, index) => (
-            <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">{skill.title}</h3>
-              <p className="text-gray-600 dark:text-gray-300">{skill.desc}</p>
+            <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg min-h-[120px]">
+              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 break-words">{skill.title}</h3>
+              <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{skill.desc}</p>
             </div>
           ))}
         </div>

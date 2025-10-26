@@ -27,7 +27,7 @@ const content = {
       }
     ],
     techCategories: {
-      frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
+      frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS", "React Native"],
       tools: ["Git", "VS Code", "Figma", "Vercel"],
       backend: ["Node.js", "Express", "MongoDB", "PostgreSQL"],
       other: ["REST APIs", "GraphQL", "Docker", "AWS"]
@@ -35,7 +35,7 @@ const content = {
   },
   hy: {
     title: "Իմ մասին",
-    subtitle: "Հավասարակշջված ֆրոնտենդ ծրագրավորող React և Next.js մասնագիտությամբ",
+    subtitle: "Փորձառու ֆրոնտենդ ծրագրավորող, մասնագիտացված React և Next.js-ով",
     experience: "Փորձ",
     technologies: "Տեխնոլոգիաներ",
     frontend: "Ֆրոնտենդ",
@@ -47,7 +47,7 @@ const content = {
       {
         title: "Ֆրոնտենդ ծրագրավորող",
         period: "2022 - ներկա",
-        desc: "Ստեղծելով ժամանակակից վեբ հավելվածներ React, Next.js և TypeScript օգտագործելով։ Կենտրոնացած աշխատասիրության, հասանելիության և օգտատերերի փորձի վրա։"
+        desc: "Ստեղծելով ժամանակակից վեբ հավելվածներ օգտագործելով React, Next.js և TypeScript։ Կենտրոնացած օպտիմալ աշխատանքի, հասանելիության և օգտատերերի փորձի վրա։"
       },
       {
         title: "Վեբ ծրագրավորող",
@@ -57,8 +57,8 @@ const content = {
     ],
     techCategories: {
       frontend: ["React", "Next.js", "TypeScript", "Tailwind CSS"],
-      tools: ["Git", "VS Code", "Figma", "Vercel"],
-      backend: ["Node.js", "Express", "MongoDB", "PostgreSQL"],
+      tools: ["Git", "VS Code", "WebStorm", "Figma", "Vercel"],
+      backend: ["Node.js", "Express", "MongoDB", "PostgreSQL", "Supabase", "Firebase"],
       other: ["REST APIs", "GraphQL", "Docker", "AWS"]
     }
   }
