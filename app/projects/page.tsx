@@ -29,21 +29,21 @@ const content = {
     details: "Details",
     projects: [
       {
-        id: "ecommerce-platform",
-        title: "E-commerce Platform",
-        description: "A full-featured online store with shopping cart, payment integration, and admin dashboard.",
+        id: "RateSnap",
+        title: "Currency Exchange Platform",
+        description: "A fully-featured currency exchange platform where we can see exchange options for all currencies in the world.",
         type: "Web App",
-        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL", "React Native"],
+        technologies: ["Next.js", "TypeScript", "Material-UI"],
         image: "/projects/ecommerce.jpg",
-        demoUrl: "https://demo.example.com",
-        githubUrl: "https://github.com/username/ecommerce",
+        demoUrl: "https://ratesnap.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
       },
       {
-        id: "portfolio-website",
-        title: "Portfolio Website",
-        description: "Modern, responsive portfolio website with project showcase and contact form.",
+        id: "photography-landing",
+        title: "Capturing Moments",
+        description: "Modern, responsive photography landing website with a unique design.",
         type: "Landing",
-        technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
         image: "/projects/portfolio.jpg",
         demoUrl: "https://portfolio.example.com",
         githubUrl: "https://github.com/username/portfolio",
@@ -83,24 +83,24 @@ const content = {
     details: "Մանրամասներ",
     projects: [
       {
-        id: "ecommerce-platform",
-        title: "Էլեկտրոնային առևտրի հարթակ",
-        description: "Լրիվ հագեցած առցանց խանութ զամբյուղով, վճարման ինտեգրացիայով և ադմին վահանակով։",
+        id: "RateSnap",
+        title: "Արժույթի փոխանակման հարթակ",
+        description: "Հագեցած արժույթի փոխանակման հարթակ, որտեղ կարող ենք տեսնլե աշխարհի բոլոր արժույթների փոխանակման տարբերակները։",
         type: "Web App",
-        technologies: ["Next.js", "TypeScript", "Stripe", "Prisma", "PostgreSQL", "React Native"],
-        image: "/projects/ecommerce.jpg",
-        demoUrl: "https://demo.example.com",
-        githubUrl: "https://github.com/username/ecommerce",
+        technologies: ["Next.js", "TypeScript", "Material-UI"],
+        image: "/projects/ratesnap.jpg",
+        demoUrl: "https://ratesnap.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
       },
       {
-        id: "portfolio-website",
-        title: "Պորտֆոլիո կայլ",
-        description: "Ժամանակակից և արձագանքող պորտֆոլիո կայլ նախագծերի ցուցադրմամբ և կոնտակտային ձևով։",
+        id: "photography-landing",
+        title: "Պահեր որսալով",
+        description: "Ժամանակակից, ադապտիվ լուսանկարչական կայք՝ յուրօրինակ դիզայնով։",
         type: "Landing",
-        technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+        technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
         image: "/projects/portfolio.jpg",
-        demoUrl: "https://portfolio.example.com",
-        githubUrl: "https://github.com/username/portfolio",
+        demoUrl: "https://photo-lp.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/photography-landing",
       },
       {
         id: "admin-dashboard",
@@ -146,7 +146,7 @@ export default function Projects() {
 
   return (
     <div className="min-h-screen bg-white dark:bg-black">
-      <main className="container mx-auto px-4 py-16 max-w-6xl">
+      <main className="container mx-auto px-4 py-16 max-w-7xl">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             {t.title}
@@ -235,12 +235,6 @@ export default function Projects() {
                       {t.github} →
                     </a>
                   )}
-                  <Link
-                    href={`/projects/${project.id}`}
-                    className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium ml-auto"
-                  >
-                    {t.details} →
-                  </Link>
                 </div>
               </div>
             </div>
