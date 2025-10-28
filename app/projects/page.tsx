@@ -34,7 +34,7 @@ const content = {
           "A fully-featured currency exchange platform where we can see exchange options for all currencies in the world.",
         type: "Web App",
         technologies: ["Next.js", "TypeScript", "Material-UI"],
-        image: "/projects/ecommerce.jpg",
+        image: "/ratesnap.png",
         demoUrl: "https://ratesnap.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
       },
@@ -45,8 +45,7 @@ const content = {
           "A fully-featured currency exchange mobile app where we can see exchange options for all currencies in the world.",
         type: "Mobile App",
         technologies: ["React Native", "TypeScript"],
-        image: "/projects/ecommerce.jpg",
-        demoUrl: "https://ratesnap.netlify.app/",
+        image: "/ratesnapmobile.png",
         githubUrl: "https://github.com/DavidGyulinyan/exchange-mobile",
       },
       {
@@ -56,9 +55,9 @@ const content = {
           "Modern, responsive photography landing website with a unique design.",
         type: "Landing",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-        image: "/projects/portfolio.jpg",
-        demoUrl: "https://portfolio.example.com",
-        githubUrl: "https://github.com/username/portfolio",
+        image: "/photography.png",
+        demoUrl: "https://photo-lp.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/photography-landing",
       },
       {
         id: "BuildProof",
@@ -67,18 +66,18 @@ const content = {
           "Professional construction document management system for creating and managing construction acceptance documents",
         type: "Web App",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-        image: "/projects/ecommerce.jpg",
+        image: "/build.png",
         demoUrl: "https://buildproof.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/BuildProof",
       },
-      
+
       {
         id: "construction-landing",
         title: "Building Dreams",
         description: "Professional construction services landing website.",
         type: "Landing",
         technologies: ["Next.js", "TypeScript", "SCSS"],
-        image: "/projects/portfolio.jpg",
+        image: "/construction.png",
         demoUrl: "https://construction-lp.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/construction-landing",
       },
@@ -88,7 +87,7 @@ const content = {
     title: "Նախագծեր",
     subtitle: "Իմ վերջին աշխատանքների և անձնական նախագծերի ցուցադրում",
     all: "Բոլորը",
-    landing: "Կայք",
+    landing: "Լենդինգ էջ",
     webApp: "Վեբ հավելված",
     mobileApp: "Մոբայլ հավելված",
     demo: "Դեմո",
@@ -100,9 +99,9 @@ const content = {
         title: "Արժույթի փոխանակման հարթակ",
         description:
           "Հագեցած արժույթի փոխանակման հարթակ, որտեղ կարող ենք տեսնել աշխարհի բոլոր արժույթների փոխանակման տարբերակները։",
-        type: "Web App",
+        type: "Վեբ հավելված",
         technologies: ["Next.js", "TypeScript", "Material-UI"],
-        image: "/projects/ratesnap.jpg",
+        image: "/ratesnap.png",
         demoUrl: "https://ratesnap.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
       },
@@ -113,8 +112,7 @@ const content = {
           "Հագեցած արժույթի փոխանակման հավելված, որտեղ կարող ենք տեսնել աշխարհի բոլոր արժույթների փոխանակման տարբերակները։",
         type: "Մոբայլ հավելված",
         technologies: ["React Native", "TypeScript"],
-        image: "/projects/ratesnap.jpg",
-        demoUrl: "https://ratesnap.netlify.app/",
+        image: "/ratesnapmobile.png",
         githubUrl: "https://github.com/DavidGyulinyan/ratesnap-mobile",
       },
       {
@@ -122,22 +120,32 @@ const content = {
         title: "Պահեր որսալով",
         description:
           "Ժամանակակից, ադապտիվ լուսանկարչական կայք՝ յուրօրինակ դիզայնով։",
-        type: "Landing",
+        type: "Լենդինգ էջ",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-        image: "/projects/portfolio.jpg",
+        image: "/photography.png",
         demoUrl: "https://photo-lp.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/photography-landing",
       },
       {
         id: "BuildProof",
-        title: "BuildProof",
+        title: "Շինարարական փաստաթղթերի պրոֆեսիոնալ կառավարման համակարգ",
         description:
           "Շինարարական փաստաթղթերի պրոֆեսիոնալ կառավարման համակարգ շինարարական ընդունման փաստաթղթերի ստեղծման և կառավարման համար",
-        type: "Web App",
+        type: "Վեբ հավելված",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
-        image: "/projects/buildproof.jpg",
+        image: "/build.png",
         demoUrl: "https://buildproof.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/BuildProof",
+      },
+      {
+        id: "construction-landing",
+        title: "Կառուցելով երազանքներ",
+        description: "Շինարարական աշխատանքների լենդինգ էջ։",
+        type: "Լենդինգ էջ",
+        technologies: ["Next.js", "TypeScript", "SCSS"],
+        image: "/construction.png",
+        demoUrl: "https://construction-lp.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/construction-landing",
       },
     ],
   },
@@ -156,9 +164,9 @@ export default function Projects() {
 
   const projectTypes = [
     { key: "All", label: t.all },
-    { key: "Landing", label: t.landing },
-    { key: "Web App", label: t.webApp },
-    { key: "Mobile App", label: t.mobileApp },
+    { key: language === 'en' ? "Landing" : "Լենդինգ էջ", label: t.landing },
+    { key: language === 'en' ? "Web App" : "Վեբ հավելված", label: t.webApp },
+    { key: language === 'en' ? "Mobile App" : "Մոբայլ հավելված", label: t.mobileApp },
   ];
 
   return (
@@ -198,20 +206,11 @@ export default function Projects() {
               className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
             >
               <div className="aspect-video bg-gray-200 dark:bg-gray-700 relative">
-                {/* Placeholder for project image */}
-                <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
-                  <svg
-                    className="w-12 h-12"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                </div>
+                <img
+                  src={project.image}
+                  alt={project.title}
+                  className="w-full h-full object-cover"
+                />
               </div>
 
               <div className="p-6">
@@ -240,7 +239,7 @@ export default function Projects() {
                 </div>
 
                 <div className="flex gap-4">
-                  {project.demoUrl && (
+                  {project.demoUrl && project.type !== "Mobile App" && (
                     <a
                       href={project.demoUrl}
                       target="_blank"
