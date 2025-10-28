@@ -8,7 +8,7 @@ interface Project {
   id: string;
   title: string;
   description: string;
-  type: "Landing" | "Web App" | "Admin Panel" | "Mobile App";
+  type: "Landing" | "Web App" | "Mobile App";
   technologies: string[];
   image: string;
   demoUrl?: string;
@@ -30,7 +30,8 @@ const content = {
       {
         id: "RateSnap",
         title: "Currency Exchange Platform",
-        description: "A fully-featured currency exchange platform where we can see exchange options for all currencies in the world.",
+        description:
+          "A fully-featured currency exchange platform where we can see exchange options for all currencies in the world.",
         type: "Web App",
         technologies: ["Next.js", "TypeScript", "Material-UI"],
         image: "/projects/ecommerce.jpg",
@@ -38,9 +39,21 @@ const content = {
         githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
       },
       {
+        id: "RateSnapMobileApp",
+        title: "Currency Exchange Mobile App",
+        description:
+          "A fully-featured currency exchange mobile app where we can see exchange options for all currencies in the world.",
+        type: "Mobile App",
+        technologies: ["React Native", "TypeScript"],
+        image: "/projects/ecommerce.jpg",
+        demoUrl: "https://ratesnap.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/exchange-mobile",
+      },
+      {
         id: "photography-landing",
         title: "Capturing Moments",
-        description: "Modern, responsive photography landing website with a unique design.",
+        description:
+          "Modern, responsive photography landing website with a unique design.",
         type: "Landing",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
         image: "/projects/portfolio.jpg",
@@ -50,12 +63,24 @@ const content = {
       {
         id: "BuildProof",
         title: "BuildProof",
-        description: "Professional construction document management system for creating and managing construction acceptance documents",
+        description:
+          "Professional construction document management system for creating and managing construction acceptance documents",
         type: "Web App",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
         image: "/projects/ecommerce.jpg",
         demoUrl: "https://buildproof.netlify.app/",
         githubUrl: "https://github.com/DavidGyulinyan/BuildProof",
+      },
+      
+      {
+        id: "construction-landing",
+        title: "Building Dreams",
+        description: "Professional construction services landing website.",
+        type: "Landing",
+        technologies: ["Next.js", "TypeScript", "SCSS"],
+        image: "/projects/portfolio.jpg",
+        demoUrl: "https://construction-lp.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/construction-landing",
       },
     ],
   },
@@ -65,7 +90,6 @@ const content = {
     all: "Բոլորը",
     landing: "Կայք",
     webApp: "Վեբ հավելված",
-    adminPanel: "Ադմին վահանակ",
     mobileApp: "Մոբայլ հավելված",
     demo: "Դեմո",
     github: "GitHub",
@@ -74,7 +98,8 @@ const content = {
       {
         id: "RateSnap",
         title: "Արժույթի փոխանակման հարթակ",
-        description: "Հագեցած արժույթի փոխանակման հարթակ, որտեղ կարող ենք տեսնլե աշխարհի բոլոր արժույթների փոխանակման տարբերակները։",
+        description:
+          "Հագեցած արժույթի փոխանակման հարթակ, որտեղ կարող ենք տեսնել աշխարհի բոլոր արժույթների փոխանակման տարբերակները։",
         type: "Web App",
         technologies: ["Next.js", "TypeScript", "Material-UI"],
         image: "/projects/ratesnap.jpg",
@@ -82,9 +107,21 @@ const content = {
         githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
       },
       {
+        id: "RateSnapMobileApp",
+        title: "Արժույթի փոխանակման մոբայլ հավելված",
+        description:
+          "Հագեցած արժույթի փոխանակման հավելված, որտեղ կարող ենք տեսնել աշխարհի բոլոր արժույթների փոխանակման տարբերակները։",
+        type: "Մոբայլ հավելված",
+        technologies: ["React Native", "TypeScript"],
+        image: "/projects/ratesnap.jpg",
+        demoUrl: "https://ratesnap.netlify.app/",
+        githubUrl: "https://github.com/DavidGyulinyan/ratesnap-mobile",
+      },
+      {
         id: "photography-landing",
         title: "Պահեր որսալով",
-        description: "Ժամանակակից, ադապտիվ լուսանկարչական կայք՝ յուրօրինակ դիզայնով։",
+        description:
+          "Ժամանակակից, ադապտիվ լուսանկարչական կայք՝ յուրօրինակ դիզայնով։",
         type: "Landing",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
         image: "/projects/portfolio.jpg",
@@ -94,7 +131,8 @@ const content = {
       {
         id: "BuildProof",
         title: "BuildProof",
-        description: "Շինարարական փաստաթղթերի պրոֆեսիոնալ կառավարման համակարգ շինարարական ընդունման փաստաթղթերի ստեղծման և կառավարման համար",
+        description:
+          "Շինարարական փաստաթղթերի պրոֆեսիոնալ կառավարման համակարգ շինարարական ընդունման փաստաթղթերի ստեղծման և կառավարման համար",
         type: "Web App",
         technologies: ["Next.js", "TypeScript", "Tailwind CSS"],
         image: "/projects/buildproof.jpg",
@@ -111,14 +149,16 @@ export default function Projects() {
 
   const [filter, setFilter] = useState<string>("All");
 
-  const filteredProjects = filter === "All"
-    ? t.projects
-    : t.projects.filter(project => project.type === filter);
+  const filteredProjects =
+    filter === "All"
+      ? t.projects
+      : t.projects.filter((project) => project.type === filter);
 
   const projectTypes = [
     { key: "All", label: t.all },
     { key: "Landing", label: t.landing },
     { key: "Web App", label: t.webApp },
+    { key: "Mobile App", label: t.mobileApp },
   ];
 
   return (
@@ -139,7 +179,7 @@ export default function Projects() {
             <button
               key={type.key}
               onClick={() => setFilter(type.key)}
-              className={`px-6 py-2 rounded-full font-medium transition-colors ${
+              className={`px-6 py-2 rounded-full font-medium transition-colors hover:scale-105 cursor-pointer ${
                 filter === type.key
                   ? "bg-blue-600 text-white"
                   : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
@@ -160,8 +200,16 @@ export default function Projects() {
               <div className="aspect-video bg-gray-200 dark:bg-gray-700 relative">
                 {/* Placeholder for project image */}
                 <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-500">
-                  <svg className="w-12 h-12" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z" clipRule="evenodd" />
+                  <svg
+                    className="w-12 h-12"
+                    fill="currentColor"
+                    viewBox="0 0 20 20"
+                  >
+                    <path
+                      fillRule="evenodd"
+                      d="M4 3a2 2 0 00-2 2v10a2 2 0 002 2h12a2 2 0 002-2V5a2 2 0 00-2-2H4zm12 12H4l4-8 3 6 2-4 3 6z"
+                      clipRule="evenodd"
+                    />
                   </svg>
                 </div>
               </div>
