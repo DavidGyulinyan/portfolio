@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useLanguage } from "../context/LanguageContext";
 
 interface Project {
@@ -157,10 +157,28 @@ export default function Projects() {
 
   const [filter, setFilter] = useState<string>("All");
 
+  // Reset filter when language changes to avoid empty results
+  useEffect(() => {
+    setFilter("All");
+  }, [language]);
+
+  const getProjectTypeKey = (type: string) => {
+    if (language === 'en') {
+      return type;
+    } else {
+      switch (type) {
+        case "Landing": return "Լենդինգ էջ";
+        case "Web App": return "Վեբ հավելված";
+        case "Mobile App": return "Մոբայլ հավելված";
+        default: return type;
+      }
+    }
+  };
+
   const filteredProjects =
     filter === "All"
       ? t.projects
-      : t.projects.filter((project) => project.type === filter);
+      : t.projects.filter((project) => getProjectTypeKey(project.type) === filter);
 
   const projectTypes = [
     { key: "All", label: t.all },
