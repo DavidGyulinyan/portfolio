@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Navigation from "./components/Navigation";
+import Footer from "./components/Footer";
 import { LanguageProvider } from "./context/LanguageContext";
 
 const geistSans = Geist({
@@ -15,21 +16,21 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "David - Frontend Developer Portfolio",
-  description: "Portfolio of David, a React/Next.js frontend developer showcasing projects, skills, and contact information.",
+  title: "Davit - Frontend Developer Portfolio",
+  description: "Portfolio of Davit, a React/Next.js frontend developer showcasing projects, skills, and contact information.",
   keywords: ["frontend developer", "React", "Next.js", "portfolio", "web development"],
-  authors: [{ name: "David" }],
+  authors: [{ name: "Davit" }],
   openGraph: {
-    title: "David - Frontend Developer Portfolio",
-    description: "Portfolio of David, a React/Next.js frontend developer showcasing projects, skills, and contact information.",
+    title: "Davit - Frontend Developer Portfolio",
+    description: "Portfolio of Davit, a React/Next.js frontend developer showcasing projects, skills, and contact information.",
     url: "https://yourdomain.com",
-    siteName: "David's Portfolio",
+    siteName: "Davit's Portfolio",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "David's Portfolio",
+        alt: "Davit's Portfolio",
       },
     ],
     locale: "en_US",
@@ -37,8 +38,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "David - Frontend Developer Portfolio",
-    description: "Portfolio of David, a React/Next.js frontend developer showcasing projects, skills, and contact information.",
+    title: "Davit - Frontend Developer Portfolio",
+    description: "Portfolio of Davit, a React/Next.js frontend developer showcasing projects, skills, and contact information.",
     images: ["/og-image.jpg"],
   },
   robots: {
@@ -67,6 +68,7 @@ export default function RootLayout({
         <LanguageProvider>
           <Navigation />
           {children}
+          <Footer />
         </LanguageProvider>
       </body>
     </html>

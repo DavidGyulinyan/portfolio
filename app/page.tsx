@@ -5,7 +5,7 @@ import { useLanguage } from "./context/LanguageContext";
 
 const content = {
   en: {
-    greeting: "Hi, I'm David",
+    greeting: "Hi, I'm Davit",
     subtitle: "Frontend Developer specializing in React and Next.js",
     viewProjects: "View Projects",
     contactMe: "Contact Me",
@@ -60,7 +60,7 @@ export default function Home() {
               {t.viewProjects}
             </Link>
             <Link
-              href="/contact"
+              href="/about"
               className="border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-medium transition-colors"
             >
               {t.contactMe}
