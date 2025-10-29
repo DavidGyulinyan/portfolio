@@ -60,7 +60,7 @@ export default function Home() {
               {t.viewProjects}
             </Link>
             <Link
-              href="/about"
+              href="/contact"
               className="border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-medium transition-colors"
             >
               {t.contactMe}
