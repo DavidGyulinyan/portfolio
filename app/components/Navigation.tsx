@@ -77,7 +77,7 @@ export default function Navigation() {
                 </Link>
               ))}
               <div className="px-3 py-2">
-                <LanguageSwitcher />
+                <LanguageSwitcher onLanguageChange={() => setIsMenuOpen(false)} />
               </div>
             </div>
           </div>
