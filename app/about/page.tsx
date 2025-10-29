@@ -142,13 +142,15 @@ export default function About() {
         </div>
 
         <div className="text-center">
-          <Link
-            href="/cv.pdf"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+          <a
+            href="/Davit-Gyulinyan-Resume.pdf"
             download
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
           >
             {t.downloadCV}
-          </Link>
+          </a>
         </div>
       </main>
     </div>
