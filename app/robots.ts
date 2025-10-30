@@ -14,7 +14,7 @@ export default function robots(): MetadataRoute.Robots {
         disallow: ['/private/', '/admin/'],
       },
     ],
-    sitemap: 'https://yourdomain.com/sitemap.xml',
-    host: 'https://yourdomain.com',
+    sitemap: 'https://davitgyulinyan.am/sitemap.xml',
+    host: 'https://davitgyulinyan.am',
   }
 }
