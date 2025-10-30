@@ -37,7 +37,7 @@ const content = {
 
 export default async function Home({ params }: PageProps) {
   const { lang } = await params;
-  const locale = lang as 'en' | 'hy';
+  const locale = (lang === 'hy' ? 'hy' : 'en') as 'en' | 'hy';
   const t = content[locale];
 
   return (
