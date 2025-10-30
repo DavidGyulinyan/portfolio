@@ -3,7 +3,8 @@ import ContactClient from "./contactClient";
 
 export const metadata: Metadata = {
   title: "Contact | Davit - Frontend Developer Portfolio",
-  description: "Get in touch with Davit, a skilled frontend developer specializing in React, Next.js, and TypeScript. Contact me for web development projects, collaborations, or job opportunities.",
+  description:
+    "Get in touch with Davit, a skilled frontend developer specializing in React, Next.js, and TypeScript. Contact me for web development projects, collaborations, or job opportunities.",
   keywords: [
     "contact Davit",
     "hire frontend developer",
@@ -15,12 +16,13 @@ export const metadata: Metadata = {
     "web developer Armenia",
     "Yerevan developer contact",
     "React portfolio contact",
-    "Next.js portfolio contact"
+    "Next.js portfolio contact",
   ],
   openGraph: {
     title: "Contact | Davit - Frontend Developer Portfolio",
-    description: "Get in touch with Davit, a skilled frontend developer specializing in React, Next.js, and TypeScript. Contact me for web development projects and collaborations.",
-    url: "https://gyulinyan-dev.netlify.app/contact",
+    description:
+      "Get in touch with Davit, a skilled frontend developer specializing in React, Next.js, and TypeScript. Contact me for web development projects and collaborations.",
+    url: "https://davitgyulinyan.am/contact",
     images: [
       {
         url: "/og-image.jpg",
@@ -33,7 +35,8 @@ export const metadata: Metadata = {
   twitter: {
     card: "summary_large_image",
     title: "Contact | Davit - Frontend Developer Portfolio",
-    description: "Get in touch with Davit, a skilled frontend developer specializing in React, Next.js, and TypeScript. Contact me for web development projects and collaborations.",
+    description:
+      "Get in touch with Davit, a skilled frontend developer specializing in React, Next.js, and TypeScript. Contact me for web development projects and collaborations.",
     images: ["/og-image.jpg"],
   },
 };

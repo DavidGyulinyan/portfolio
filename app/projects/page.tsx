@@ -42,7 +42,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Projects | Davit - Frontend Developer Portfolio",
     description: "Explore Davit's portfolio of web development projects including React, Next.js, TypeScript applications, mobile apps, and landing pages.",
-    url: "https://yourdomain.com/projects",
+    url: "https://davitgyulinyan.am/projects",
     images: [
       {
         url: "/og-image.jpg",

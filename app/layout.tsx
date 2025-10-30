@@ -50,7 +50,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Davit - Frontend Developer Portfolio | React, Next.js, TypeScript Expert",
     description: "Professional portfolio of Davit, a skilled frontend developer specializing in React, Next.js, TypeScript, and modern web technologies. View my projects, skills, and get in touch for your next web development project.",
-    url: "https://yourdomain.com",
+    url: "https://davitgyulinyan.am",
     siteName: "Davit's Portfolio",
     images: [
       {
@@ -81,7 +81,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://yourdomain.com",
+    canonical: "https://davitgyulinyan.am",
   },
   category: "Technology",
   classification: "Web Development Portfolio",
@@ -98,7 +98,7 @@ export default function RootLayout({
     "name": "Davit Gyulinyan",
     "jobTitle": "Frontend Developer",
     "description": "Passionate frontend developer specializing in React, Next.js, TypeScript, and modern web technologies",
-    "url": "https://yourdomain.com",
+    "url": "https://davitgyulinyan.am",
     "sameAs": [
       "https://github.com/DavidGyulinyan",
       "https://t.me/DavidGyulinyan"
