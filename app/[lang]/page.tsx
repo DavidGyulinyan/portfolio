@@ -66,16 +66,21 @@ export default async function Home({ params }: PageProps) {
           </div>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mt-16">
-          {t.skills.map((skill, index) => (
-            <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
-                {skill.title}
-              </h3>
-              <p className="text-gray-600 dark:text-gray-300">{skill.desc}</p>
-            </div>
-          ))}
-        </div>
+        <section className="mt-16">
+          <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+            {locale === 'en' ? 'Skills & Technologies' : 'Հմտություններ և տեխնոլոգիաներ'}
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {t.skills.map((skill, index) => (
+              <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg">
+                <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2">
+                  {skill.title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300">{skill.desc}</p>
+              </div>
+            ))}
+          </div>
+        </section>
       </main>
     </div>
   );
