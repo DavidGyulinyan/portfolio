@@ -87,6 +87,9 @@ export default function TechtaskClient({ content }: TechtaskClientProps) {
     additionalDescription: "",
   });
 
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [lastSubmitTime, setLastSubmitTime] = useState(0);
+
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
   ) => {
@@ -115,19 +118,56 @@ export default function TechtaskClient({ content }: TechtaskClientProps) {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
+    // Rate limiting: prevent submissions more frequent than once per 30 seconds
+    const now = Date.now();
+    if (now - lastSubmitTime < 30000) {
+      alert(language === "en" ? "Please wait 30 seconds before submitting again." : "Խնդրում ենք սպասել 30 վայրկյան նախքան նորից ուղարկելը:");
+      return;
+    }
+
+    // Basic validation
+    if (!formData.name.trim() || !formData.email.trim() || !formData.projectType || !formData.design || !formData.content || !formData.deadline) {
+      alert(language === "en" ? "Please fill in all required fields." : "Խնդրում ենք լրացնել բոլոր պարտադիր դաշտերը:");
+      return;
+    }
+
+    // Email validation
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(formData.email)) {
+      alert(language === "en" ? "Please enter a valid email address." : "Խնդրում ենք մուտքագրել վավեր էլ․ փոստի հասցե:");
+      return;
+    }
+
+    // Prevent spam: limit message length
+    const maxLength = 2000;
     const message = `
-Name: ${formData.name}
-Email: ${formData.email}
-Project Type: ${formData.projectType}
-Design: ${formData.design}
-Content: ${formData.content}
-Functionality: ${formData.functionality.join(", ")}
-Deadline: ${formData.deadline}
-Additional Description: ${formData.additionalDescription}
+Name: ${formData.name.substring(0, 100)}
+Email: ${formData.email.substring(0, 100)}
+Project Type: ${formData.projectType.substring(0, 100)}
+Design: ${formData.design.substring(0, 100)}
+Content: ${formData.content.substring(0, 100)}
+Functionality: ${formData.functionality.join(", ").substring(0, 500)}
+Deadline: ${formData.deadline.substring(0, 100)}
+Additional Description: ${formData.additionalDescription.substring(0, 1000)}
     `.trim();
 
-    const telegramUrl = `https://t.me/DavidGyulinyan?text=${encodeURIComponent(message)}`;
-    window.open(telegramUrl, "_blank");
+    if (message.length > maxLength) {
+      alert(language === "en" ? "Message too long. Please shorten your input." : "Հաղորդագրությունը չափազանց երկար է։ Խնդրում ենք կրճտացնել մուտքագրումը:");
+      return;
+    }
+
+    setIsSubmitting(true);
+    setLastSubmitTime(now);
+
+    try {
+      const telegramUrl = `https://t.me/DavidGyulinyan?text=${encodeURIComponent(message)}`;
+      window.open(telegramUrl, "_blank");
+    } catch (error) {
+      console.error("Error opening Telegram:", error);
+      alert(language === "en" ? "Error sending message. Please try again." : "Սխալ հաղորդագրություն ուղարկելիս։ Խնդրում ենք փորձել կրկին:");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -360,9 +400,10 @@ Additional Description: ${formData.additionalDescription}
           <div className="text-center">
             <button
               type="submit"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              disabled={isSubmitting}
+              className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white px-8 py-3 rounded-lg font-medium transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
             >
-              {t.submit}
+              {isSubmitting ? (language === "en" ? "Sending..." : "Ուղարկվում է...") : t.submit}
             </button>
           </div>
         </form>
