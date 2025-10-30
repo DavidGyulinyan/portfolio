@@ -71,7 +71,7 @@ export default function Home() {
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
           {t.skills.map((skill, index) => (
             <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg min-h-[120px]">
-              <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 wrap-break-word">{skill.title}</h3>
+              <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 wrap-break-word">{skill.title}</h2>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{skill.desc}</p>
             </div>
           ))}
