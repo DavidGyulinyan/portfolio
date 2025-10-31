@@ -58,8 +58,8 @@ export default function AboutClient({ content }: AboutClientProps) {
   const t = content[language];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             {t.title}
@@ -96,7 +96,7 @@ export default function AboutClient({ content }: AboutClientProps) {
               {t.technologies}
             </h2>
             <div className="grid grid-cols-2 gap-4">
-              <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="backdrop-blur-sm bg-white/20 dark:bg-black/20 p-4 rounded-lg border border-white/30 dark:border-gray-700/30 shadow-lg">
                 <h4 className="font-medium text-gray-900 dark:text-white">
                   {t.frontend}
                 </h4>
@@ -106,7 +106,7 @@ export default function AboutClient({ content }: AboutClientProps) {
                   ))}
                 </ul>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="backdrop-blur-sm bg-white/20 dark:bg-black/20 p-4 rounded-lg border border-white/30 dark:border-gray-700/30 shadow-lg">
                 <h4 className="font-medium text-gray-900 dark:text-white">
                   {t.tools}
                 </h4>
@@ -116,7 +116,7 @@ export default function AboutClient({ content }: AboutClientProps) {
                   ))}
                 </ul>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="backdrop-blur-sm bg-white/20 dark:bg-black/20 p-4 rounded-lg border border-white/30 dark:border-gray-700/30 shadow-lg">
                 <h4 className="font-medium text-gray-900 dark:text-white">
                   {t.backend}
                 </h4>
@@ -126,7 +126,7 @@ export default function AboutClient({ content }: AboutClientProps) {
                   ))}
                 </ul>
               </div>
-              <div className="bg-gray-50 dark:bg-gray-800 p-4 rounded-lg">
+              <div className="backdrop-blur-sm bg-white/20 dark:bg-black/20 p-4 rounded-lg border border-white/30 dark:border-gray-700/30 shadow-lg">
                 <h4 className="font-medium text-gray-900 dark:text-white">
                   {t.other}
                 </h4>
@@ -146,12 +146,12 @@ export default function AboutClient({ content }: AboutClientProps) {
             download
             target="_blank"
             rel="noopener noreferrer"
-            className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors inline-block"
+            className="gradient-accent text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-block"
           >
             {t.downloadCV}
           </a>
         </div>
-      </main>
+      </div>
     </div>
   );
 }
