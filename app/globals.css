@@ -67,3 +67,107 @@ body {
 .dark .gradient-accent {
   background: var(--dark-accent-gradient);
 }
+
+/* Advanced Custom Select Styling */
+select {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23666' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6,9 12,15 18,9'></polyline></svg>");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 20px;
+  padding-right: 48px;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+select:focus {
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+  transform: translateY(-1px);
+}
+
+select option {
+  background: rgba(45, 55, 72, 0.95);
+  color: #f7fafc;
+  padding: 16px 20px;
+  font-size: 15px;
+  font-weight: 500;
+  margin: 2px 0;
+  border-radius: 8px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+select option:hover {
+  background: linear-gradient(135deg, rgba(88, 28, 135, 0.95) 0%, rgba(124, 58, 237, 0.95) 100%);
+  color: white;
+  transform: translateX(4px) scale(1.02);
+  box-shadow: 0 6px 20px rgba(124, 58, 237, 0.4);
+  border: 1px solid rgba(124, 58, 237, 0.6);
+}
+
+select option:checked {
+  background: linear-gradient(135deg, #7c3aed 0%, #4c1d95 100%);
+  color: white;
+  font-weight: 600;
+  transform: translateX(2px);
+  box-shadow: 0 8px 25px rgba(124, 58, 237, 0.5);
+  border: 1px solid rgba(124, 58, 237, 0.7);
+}
+
+select option:checked:hover {
+  background: linear-gradient(135deg, #6d28d9 0%, #3b1d73 100%);
+}
+
+/* Dark theme adjustments */
+.dark select {
+  background-image: url("data:image/svg+xml;charset=US-ASCII,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23aaa' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'><polyline points='6,9 12,15 18,9'></polyline></svg>");
+}
+
+.dark select option {
+  background: rgba(26, 32, 44, 0.98);
+  color: #f7fafc;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.dark select option:hover {
+  background: linear-gradient(135deg, rgba(27, 43, 60, 0.95) 0%, rgba(31, 58, 138, 0.95) 100%);
+  color: white;
+  border: 1px solid rgba(31, 58, 138, 0.6);
+}
+
+.dark select option:checked {
+  background: linear-gradient(135deg, #1a365d 0%, #2c5282 100%);
+  color: white;
+  font-weight: 600;
+  border: 1px solid rgba(31, 58, 138, 0.7);
+}
+
+/* Enhanced dropdown container */
+select::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.05) 100%);
+  border-radius: inherit;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+select:focus::after {
+  opacity: 1;
+}
+
+.dark select::after {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+}
