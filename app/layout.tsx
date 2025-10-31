@@ -144,11 +144,17 @@ export default function RootLayout({
         />
       </head>
       <body suppressHydrationWarning={true}
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen`}
+        style={{
+          background: 'var(--background)',
+          backgroundAttachment: 'fixed'
+        }}
       >
         <LanguageProvider>
           <Navigation />
-          {children}
+          <main className="min-h-screen">
+            {children}
+          </main>
           <Footer />
         </LanguageProvider>
       </body>

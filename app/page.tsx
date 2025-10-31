@@ -43,8 +43,8 @@ export default function Home() {
   const t = content[language];
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 dark:text-white mb-6">
             {t.greeting}
@@ -55,13 +55,13 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Link
               href="/projects"
-              className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-colors"
+              className="gradient-primary text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {t.viewProjects}
             </Link>
             <Link
               href="/contact"
-              className="border border-gray-300 dark:border-gray-600 hover:border-gray-400 dark:hover:border-gray-500 text-gray-900 dark:text-white px-8 py-3 rounded-lg font-medium transition-colors"
+              className="gradient-secondary text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl"
             >
               {t.contactMe}
             </Link>
@@ -70,13 +70,13 @@ export default function Home() {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 mt-16">
           {t.skills.map((skill, index) => (
-            <div key={index} className="bg-gray-50 dark:bg-gray-800 p-6 rounded-lg min-h-[120px]">
+            <div key={index} className="backdrop-blur-sm bg-white/20 dark:bg-black/20 p-6 rounded-lg min-h-[120px] border border-white/30 dark:border-gray-700/30 shadow-lg">
               <h2 className="text-lg font-semibold text-gray-900 dark:text-white mb-2 wrap-break-word">{skill.title}</h2>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{skill.desc}</p>
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

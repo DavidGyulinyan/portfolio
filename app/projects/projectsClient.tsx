@@ -90,8 +90,8 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
       ];
 
        return (
-    <div className="min-h-screen bg-white dark:bg-black">
-      <main className="container mx-auto px-4 py-16 max-w-7xl">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-16 max-w-7xl">
         <div className="mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             {t.title}
@@ -107,10 +107,10 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
             <button
               key={type.key}
               onClick={() => setFilter(type.key)}
-              className={`px-6 py-2 rounded-full font-medium transition-colors hover:scale-105 cursor-pointer ${
+              className={`px-6 py-2 rounded-full font-medium transition-all duration-300 hover:scale-105 cursor-pointer ${
                 filter === type.key
-                  ? "bg-blue-600 text-white"
-                  : "bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-700"
+                  ? "gradient-accent text-white shadow-lg"
+                  : "backdrop-blur-sm bg-white/20 dark:bg-black/20 text-gray-700 dark:text-gray-300 hover:bg-white/30 dark:hover:bg-black/30 border border-white/30 dark:border-gray-700/30"
               }`}
             >
               {type.label}
@@ -123,7 +123,7 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
           {filteredProjects.map((project) => (
             <div
               key={project.id}
-              className="bg-white dark:bg-gray-800 rounded-lg shadow-lg overflow-hidden hover:shadow-xl transition-shadow"
+              className="backdrop-blur-sm bg-white/20 dark:bg-black/20 rounded-lg shadow-2xl overflow-hidden hover:shadow-3xl transition-all duration-300 transform hover:scale-105 border border-white/30 dark:border-gray-700/30"
             >
               <div className="aspect-video bg-gray-200 dark:bg-gray-700 relative">
                 <img
@@ -138,7 +138,7 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
                   <h3 className="text-xl font-semibold text-gray-900 dark:text-white">
                     {project.title}
                   </h3>
-                  <span className="px-2 py-1 text-xs font-medium bg-blue-100 dark:bg-blue-900 text-blue-800 dark:text-blue-200 rounded">
+                  <span className="px-2 py-1 text-xs font-medium gradient-primary text-white rounded">
                     {project.type}
                   </span>
                 </div>
@@ -151,7 +151,7 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
                   {project.technologies.map((tech) => (
                     <span
                       key={tech}
-                      className="px-2 py-1 text-xs bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded"
+                      className="px-2 py-1 text-xs backdrop-blur-sm bg-white/30 dark:bg-black/30 text-gray-700 dark:text-gray-300 rounded border border-white/20 dark:border-gray-700/20"
                     >
                       {tech}
                     </span>
@@ -164,7 +164,7 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
                       href={project.demoUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-blue-600 hover:text-blue-700 font-medium"
+                      className="gradient-secondary text-white px-3 py-1 rounded text-sm font-medium transition-all duration-300 transform hover:scale-105"
                     >
                       {t.demo} →
                     </a>
@@ -174,7 +174,7 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
                       href={project.githubUrl}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-600 dark:text-gray-400 hover:text-gray-800 dark:hover:text-gray-200 font-medium"
+                      className="gradient-warm text-white px-3 py-1 rounded text-sm font-medium transition-all duration-300 transform hover:scale-105"
                     >
                       {t.github} →
                     </a>
@@ -184,7 +184,7 @@ export default function ProjectsClient({ content }: ProjectsClientProps) {
             </div>
           ))}
         </div>
-      </main>
+      </div>
     </div>
   );
 }

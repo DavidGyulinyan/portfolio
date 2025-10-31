@@ -58,7 +58,7 @@ export default function Footer() {
   const t = content[language];
 
   return (
-    <footer className="bg-gray-900 dark:bg-black text-white py-12">
+    <footer className="backdrop-blur-md bg-gradient-to-r from-purple-900/20 to-blue-900/20 dark:from-gray-900/80 dark:to-black/80 text-white py-12 border-t border-white/20 dark:border-gray-800/50">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center">
           <h3 className="text-2xl font-bold mb-4">{t.getInTouch}</h3>
@@ -71,7 +71,7 @@ export default function Footer() {
                 href={social.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-gray-400 hover:text-white transition-colors duration-300"
+                className="text-gray-400 hover:text-white transition-all duration-300 transform hover:scale-110 p-2 rounded-full backdrop-blur-sm bg-white/10 hover:bg-white/20"
                 aria-label={social.name}
               >
                 {social.icon}
@@ -79,7 +79,7 @@ export default function Footer() {
             ))}
           </div>
 
-          <div className="border-t border-gray-800 pt-8">
+          <div className="border-t border-white/20 dark:border-gray-800/50 pt-8">
             <p className="text-gray-400 text-sm">
               © {new Date().getFullYear()} Davit Gyulinyan. All rights reserved.
             </p>
