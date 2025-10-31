@@ -3,6 +3,14 @@
 :root {
   --background: #ffffff;
   --foreground: #171717;
+  --primary-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --secondary-gradient: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+  --accent-gradient: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+  --warm-gradient: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+  --cool-gradient: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+  --dark-primary-gradient: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+  --dark-secondary-gradient: linear-gradient(45deg, #16222a 0%, #3a6073 100%);
+  --dark-accent-gradient: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
 }
 
 @theme inline {
@@ -14,7 +22,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
     --foreground: #ededed;
   }
 }
@@ -23,4 +31,39 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  background-attachment: fixed;
+}
+
+/* Additional utility classes for gradients */
+.gradient-primary {
+  background: var(--primary-gradient);
+}
+
+.gradient-secondary {
+  background: var(--secondary-gradient);
+}
+
+.gradient-accent {
+  background: var(--accent-gradient);
+}
+
+.gradient-warm {
+  background: var(--warm-gradient);
+}
+
+.gradient-cool {
+  background: var(--cool-gradient);
+}
+
+.dark .gradient-primary {
+  background: var(--dark-primary-gradient);
+}
+
+.dark .gradient-secondary {
+  background: var(--dark-secondary-gradient);
+}
+
+.dark .gradient-accent {
+  background: var(--dark-accent-gradient);
 }

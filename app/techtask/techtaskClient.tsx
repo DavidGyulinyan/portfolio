@@ -171,8 +171,8 @@ Additional Description: ${formData.additionalDescription.substring(0, 1000)}
   };
 
   return (
-    <div className="min-h-screen bg-white dark:bg-black">
-      <main className="container mx-auto px-4 py-16 max-w-4xl">
+    <div className="min-h-screen">
+      <div className="container mx-auto px-4 py-16 max-w-4xl">
         <div className="text-center mb-12">
           <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
             {t.title}
@@ -183,231 +183,233 @@ Additional Description: ${formData.additionalDescription.substring(0, 1000)}
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-8">
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label
-                htmlFor="name"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-              >
-                {t.name} *
-              </label>
-              <input
-                type="text"
-                id="name"
-                name="name"
-                required
-                value={formData.name}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                placeholder={t.namePlaceholder}
-              />
+          <div className="backdrop-blur-sm bg-white/20 dark:bg-black/20 p-8 rounded-2xl border border-white/30 dark:border-gray-700/30 shadow-2xl">
+            <div className="grid md:grid-cols-2 gap-6">
+              <div>
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
+                  {t.name} *
+                </label>
+                <input
+                  type="text"
+                  id="name"
+                  name="name"
+                  required
+                  value={formData.name}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white backdrop-blur-sm"
+                  placeholder={t.namePlaceholder}
+                />
+              </div>
+              <div>
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
+                  {t.email} *
+                </label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  required
+                  value={formData.email}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white backdrop-blur-sm"
+                  placeholder={t.emailPlaceholder}
+                />
+              </div>
             </div>
-            <div>
+
+            <div className="mt-6">
               <label
-                htmlFor="email"
+                htmlFor="projectType"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
-                {t.email} *
-              </label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                required
-                value={formData.email}
-                onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-                placeholder={t.emailPlaceholder}
-              />
-            </div>
-          </div>
-
-          <div>
-            <label
-              htmlFor="projectType"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-            >
-              {t.projectType} *
-            </label>
-            <select
-              id="projectType"
-              name="projectType"
-              required
-              value={formData.projectType}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-            >
-              <option value="">{language === "en" ? "Select project type" : "Ընտրեք նախագծի տեսակը"}</option>
-              <option value="Landing page">{t.landingPage}</option>
-              <option value="Multi-page site">{t.multiPageSite}</option>
-              <option value="Web application">{t.webApp}</option>
-            </select>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <label
-                htmlFor="design"
-                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-              >
-                {t.designContent} - Design *
+                {t.projectType} *
               </label>
               <select
-                id="design"
-                name="design"
+                id="projectType"
+                name="projectType"
                 required
-                value={formData.design}
+                value={formData.projectType}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white backdrop-blur-sm"
               >
-                <option value="">{language === "en" ? "Select design option" : "Ընտրեք դիզայնի տարբերակը"}</option>
-                <option value="Ready design">{t.readyDesign}</option>
-                <option value="Need design creation">{t.needDesign}</option>
+                <option value="">{language === "en" ? "Select project type" : "Ընտրեք նախագծի տեսակը"}</option>
+                <option value="Landing page">{t.landingPage}</option>
+                <option value="Multi-page site">{t.multiPageSite}</option>
+                <option value="Web application">{t.webApp}</option>
               </select>
             </div>
-            <div>
+
+            <div className="grid md:grid-cols-2 gap-6 mt-6">
+              <div>
+                <label
+                  htmlFor="design"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
+                  {t.designContent} - Design *
+                </label>
+                <select
+                  id="design"
+                  name="design"
+                  required
+                  value={formData.design}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white backdrop-blur-sm"
+                >
+                  <option value="">{language === "en" ? "Select design option" : "Ընտրեք դիզայնի տարբերակը"}</option>
+                  <option value="Ready design">{t.readyDesign}</option>
+                  <option value="Need design creation">{t.needDesign}</option>
+                </select>
+              </div>
+              <div>
+                <label
+                  htmlFor="content"
+                  className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+                >
+                  {t.designContent} - Content *
+                </label>
+                <select
+                  id="content"
+                  name="content"
+                  required
+                  value={formData.content}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white backdrop-blur-sm"
+                >
+                  <option value="">{language === "en" ? "Select content option" : "Ընտրեք բովանդակության տարբերակը"}</option>
+                  <option value="Content available">{t.contentAvailable}</option>
+                  <option value="Need content preparation">{t.needContent}</option>
+                </select>
+              </div>
+            </div>
+
+            <div className="mt-6">
+              <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                {t.functionality} *
+              </label>
+              <div className="grid md:grid-cols-2 gap-2">
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="dashboard"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.dashboard}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="database"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.database}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="pdfReports"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.pdfReports}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="userAuth"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.userAuth}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="apiIntegration"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.apiIntegration}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="animations"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.animations}
+                </label>
+                <label className="flex items-center">
+                  <input
+                    type="checkbox"
+                    name="contactForm"
+                    onChange={handleCheckboxChange}
+                    className="mr-2"
+                  />
+                  {t.contactForm}
+                </label>
+              </div>
+            </div>
+
+            <div className="mt-6">
               <label
-                htmlFor="content"
+                htmlFor="deadline"
                 className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
               >
-                {t.designContent} - Content *
+                {t.deadlines} *
               </label>
               <select
-                id="content"
-                name="content"
+                id="deadline"
+                name="deadline"
                 required
-                value={formData.content}
+                value={formData.deadline}
                 onChange={handleChange}
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white backdrop-blur-sm"
               >
-                <option value="">{language === "en" ? "Select content option" : "Ընտրեք բովանդակության տարբերակը"}</option>
-                <option value="Content available">{t.contentAvailable}</option>
-                <option value="Need content preparation">{t.needContent}</option>
+                <option value="">{language === "en" ? "Select deadline" : "Ընտրեք ժամկետը"}</option>
+                <option value="Fast">{t.fast}</option>
+                <option value="Standard">{t.standard}</option>
               </select>
             </div>
-          </div>
 
-          <div>
-            <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
-              {t.functionality}
-            </label>
-            <div className="space-y-2">
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="dashboard"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.dashboard}
+            <div className="mt-6">
+              <label
+                htmlFor="additionalDescription"
+                className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
+              >
+                {t.additionalDescription}
               </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="database"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.database}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="pdfReports"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.pdfReports}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="userAuth"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.userAuth}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="apiIntegration"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.apiIntegration}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="animations"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.animations}
-              </label>
-              <label className="flex items-center">
-                <input
-                  type="checkbox"
-                  name="contactForm"
-                  onChange={handleCheckboxChange}
-                  className="mr-2"
-                />
-                {t.contactForm}
-              </label>
+              <textarea
+                id="additionalDescription"
+                name="additionalDescription"
+                rows={6}
+                value={formData.additionalDescription}
+                onChange={handleChange}
+                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white/80 dark:bg-gray-800/80 text-gray-900 dark:text-white resize-vertical backdrop-blur-sm"
+                placeholder={t.additionalPlaceholder}
+              />
             </div>
-          </div>
 
-          <div>
-            <label
-              htmlFor="deadline"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-            >
-              {t.deadlines} *
-            </label>
-            <select
-              id="deadline"
-              name="deadline"
-              required
-              value={formData.deadline}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
-            >
-              <option value="">{language === "en" ? "Select deadline" : "Ընտրեք ժամկետը"}</option>
-              <option value="Fast">{t.fast}</option>
-              <option value="Standard">{t.standard}</option>
-            </select>
-          </div>
-
-          <div>
-            <label
-              htmlFor="additionalDescription"
-              className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2"
-            >
-              {t.additionalDescription}
-            </label>
-            <textarea
-              id="additionalDescription"
-              name="additionalDescription"
-              rows={6}
-              value={formData.additionalDescription}
-              onChange={handleChange}
-              className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent bg-white dark:bg-gray-800 text-gray-900 dark:text-white resize-vertical"
-              placeholder={t.additionalPlaceholder}
-            />
-          </div>
-
-          <div className="text-center">
-            <button
-              type="submit"
-              disabled={isSubmitting}
-              className="bg-blue-600 hover:bg-blue-700 disabled:bg-blue-400 disabled:cursor-not-allowed text-white px-8 py-3 rounded-lg font-medium transition-colors focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
-            >
-              {isSubmitting ? (language === "en" ? "Sending..." : "Ուղարկվում է...") : t.submit}
-            </button>
+            <div className="text-center mt-8">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="gradient-accent hover:opacity-90 disabled:opacity-50 disabled:cursor-not-allowed text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 transform hover:scale-105 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+              >
+                {isSubmitting ? (language === "en" ? "Sending..." : "Ուղարկվում է...") : t.submit}
+              </button>
+            </div>
           </div>
         </form>
-      </main>
+      </div>
     </div>
   );
 }
