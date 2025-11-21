@@ -10,7 +10,6 @@ const languages = [
 export default function LanguageSwitcher({ onLanguageChange }: { onLanguageChange?: () => void }) {
   const { language, setLanguage } = useLanguage();
 
-  const currentLang = languages.find(lang => lang.code === language);
   const otherLang = languages.find(lang => lang.code !== language);
 
   const handleLanguageChange = (code: 'en' | 'hy') => {

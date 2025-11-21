@@ -62,17 +62,6 @@ export const metadata: Metadata = {
 
 import ProjectsClient from "./projectsClient";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  type: "Landing" | "Web App" | "Mobile App";
-  technologies: string[];
-  image: string;
-  demoUrl?: string;
-  githubUrl?: string;
-}
-
 const content = {
   en: {
     title: "Projects",

@@ -48,7 +48,7 @@ const content = {
     additionalDescription: "Հավելյալ նկարագրություն",
     submit: "Ուղարկել տեխնիկական առաջադրանքը",
     namePlaceholder: "Մուտքագրեք ձեր անունը",
-    emailPlaceholder: "Մուտքագրեք ձեր էլ․ փոստը",
+    emailPlaceholder: "Մուտքագրեք ձեր էլ․ հասցեն",
     additionalPlaceholder: "Նկարագրեք հատուկ ֆունկցիաները կամ ցանկալի փոփոխությունները...",
     landingPage: "Landing page (մեկ էջ, ադապտիվ դիզայն) → 40,000֏",
     multiPageSite: "Մինչև 10 էջից բաղկացած կայք → 100,000֏",
@@ -70,8 +70,6 @@ const content = {
 };
 
 export default async function TechtaskPage({ params }: PageProps) {
-  const { lang } = await params;
-  const locale = (lang === 'hy' ? 'hy' : 'en') as 'en' | 'hy';
 
   return <TechtaskClient content={content} />;
 }
