@@ -62,17 +62,6 @@ export const metadata: Metadata = {
 
 import ProjectsClient from "./projectsClient";
 
-interface Project {
-  id: string;
-  title: string;
-  description: string;
-  type: "Landing" | "Web App" | "Mobile App";
-  technologies: string[];
-  image: string;
-  demoUrl?: string;
-  githubUrl?: string;
-}
-
 const content = {
   en: {
     title: "Projects",
@@ -143,7 +132,7 @@ const content = {
   },
   hy: {
     title: "Նախագծեր",
-    subtitle: "Իմ վերջին աշխատանքների և անձնական նախագծերի ցուցադրում",
+    subtitle: "Իմ վերջին աշխատանքները և անձնական նախագծերը",
     all: "Բոլորը",
     landing: "Լենդինգ էջ",
     webApp: "Վեբ հավելված",
