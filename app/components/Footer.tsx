@@ -8,8 +8,8 @@ const content = {
     socialLinks: "Follow me on social media",
   },
   hy: {
-    getInTouch: "Կապվեք ինձ հետ",
-    socialLinks: "Հետևեք ինձ սոցիալական մեդիայով",
+    getInTouch: "Կապվեք",
+    socialLinks: "Կապվեք ինձ հետ սոցիալական հարթակներով, կամ ծանոթացեք իմ նախագծերին GitHub-ում",
   },
 };
 
