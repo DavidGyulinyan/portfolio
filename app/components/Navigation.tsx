@@ -4,18 +4,38 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useState } from "react";
 import LanguageSwitcher from "./LanguageSwitcher";
+import { useLanguage } from "../context/LanguageContext";
 
-const navigation = [
-  { name: "Home", href: "/" },
-  { name: "About", href: "/about" },
-  { name: "Projects", href: "/projects" },
-  { name: "Tech Task", href: "/en/techtask" },
-  { name: "Contact", href: "/contact" },
-];
+const content = {
+  en: {
+    home: "Home",
+    about: "About",
+    projects: "Projects",
+    techTask: "Tech Task",
+    contact: "Contact",
+  },
+  hy: {
+    home: "Գլխավոր",
+    about: "Մասին",
+    projects: "Նախագծեր",
+    techTask: "Տեխնիկական առաջադրանք",
+    contact: "Կապ",
+  },
+};
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { language } = useLanguage();
+  const t = content[language];
+
+  const navigation = [
+    { name: t.home, href: "/" },
+    { name: t.about, href: "/about" },
+    { name: t.projects, href: "/projects" },
+    { name: t.techTask, href: `/${language}/techtask` },
+    { name: t.contact, href: "/contact" },
+  ];
 
   return (
     <nav className="backdrop-blur-md bg-white/80 dark:bg-black/80 border-b border-white/20 dark:border-gray-800/50 sticky top-0 z-50">
