@@ -16,7 +16,7 @@ const content = {
   },
   hy: {
     home: "Գլխավոր",
-    about: "Մասին",
+    about: "Իմ մասին",
     projects: "Նախագծեր",
     techTask: "Տեխնիկական առաջադրանք",
     contact: "Կապ",
