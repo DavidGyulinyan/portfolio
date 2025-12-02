@@ -150,7 +150,7 @@ const content = {
         technologies: ["Next.js", "TypeScript", "Material-UI"],
         image: "/ratesnap.png",
         demoUrl: "https://ratesnap.netlify.app/",
-        githubUrl: "https://github.com/DavidGyulinyan/exchange-app",
+        githubUrl: "https://github.com/DavidGyulinyan/currency-converter",
       },
       {
         id: "RateSnapMobileApp",
